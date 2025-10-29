@@ -23,23 +23,23 @@ Traditional recommendation systems rely on metadata (color, brand, category), wh
   Scalable personalization — works across millions of items and users without retraining per user.
 This project solves that problem using deep visual embeddings extracted via ResNet, allowing the system to understand fashion images like a human stylist would.
 How It Works
-Step 1. Feature Extraction
+1) Feature Extraction
 
 Uses ResNet50 (PyTorch) pre-trained on ImageNet.
 
 Extracts 2048-dimensional embeddings from the final convolutional layer.
 
-Step 2. Indexing
+2) Indexing
 
 Stores all product embeddings in FAISS (or Annoy) for fast similarity search.
 
-Step 3. Recommendation Flow
+3) Recommendation Flow
 
 User queries or searches → top 25 visually similar items are shown.
 
 On selecting any item → model finds other items with closest embedding distances (fine-grained visual match).
 
-Step 4. Streamlit Interface
+4) Streamlit Interface
 
 Interactive gallery of items (grid view).
 
@@ -68,7 +68,7 @@ KAGGLE: https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dat
 # CONCLUSION
 This project demonstrates the power of deep learning-based feature extraction for building an effective fashion recommendation system. By leveraging ResNet as a feature extractor, we were able to convert images into high-dimensional embeddings that capture visual similarity. The system allows users to explore a catalog of fashion items by showing similar items based on visual appearance, enhancing discoverability and personalization.
 
-Key takeaways:
+# Key takeaways:
 
 Visual similarity matters in fashion — users are more likely to engage when recommendations match the style, color, or texture of items they like.
 
@@ -78,12 +78,4 @@ The approach is scalable and modular — the feature extraction model can be use
 
 Practical impact — this system can improve user experience in e-commerce, reduce decision fatigue, and increase conversion rates by providing relevant recommendations.
 
-Future directions:
 
-Integrate textual or attribute-based features alongside visual embeddings for multi-modal recommendations.
-
-Optimize the system for real-time inference with large catalogs using approximate nearest neighbor search.
-
-Explore personalized recommendations by combining user behavior with visual similarity.
-
-Overall, this project highlights how deep learning and image embeddings can be applied to enhance user engagement and personalization in the fashion industry.
